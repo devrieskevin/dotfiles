@@ -7,6 +7,7 @@ return {
     },
     config = function()
       local telescope = require("telescope")
+
       telescope.setup({
         pickers = {
           find_files = {
@@ -17,6 +18,13 @@ return {
               "--files",
               "-g",
               "!**/node_modules/*",
+              "-g",
+              "!**/.git/*",
+            },
+          },
+          live_grep = {
+            additional_args = {
+              "--hidden",
               "-g",
               "!**/.git/*",
             },
