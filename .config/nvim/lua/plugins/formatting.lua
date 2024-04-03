@@ -13,6 +13,7 @@ return {
       conform.setup({
         formatters_by_ft = {
           lua = { "stylua" },
+          twig = { "djlint", "twig-cs-fixer" },
           ["*"] = { "trim_whitespace" },
         },
         format_on_save = format_on_save,
