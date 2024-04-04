@@ -18,6 +18,26 @@ return {
           port = 9003,
         },
       }
+
+      vim.keymap.set("n", "<leader>db", function()
+        dap.toggle_breakpoint()
+      end, { desc = "Toggle breakpoint" })
+
+      vim.keymap.set("n", "<leader>dc", function()
+        dap.continue()
+      end, { desc = "Start or continue from breakpoint" })
+
+      vim.keymap.set("n", "<leader>do", function()
+        dap.step_over()
+      end, { desc = "Step over" })
+
+      vim.keymap.set("n", "<leader>di", function()
+        dap.step_into()
+      end, { desc = "Step into" })
+
+      vim.keymap.set("n", "<leader>dr", function()
+        dap.repl.open()
+      end, { desc = "Step out" })
     end,
   },
   {
