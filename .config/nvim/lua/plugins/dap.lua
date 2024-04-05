@@ -46,5 +46,12 @@ return {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio",
     },
+    config = function()
+      require("dapui").setup()
+
+      vim.keymap.set("n", "<leader>dt", function()
+        require("dapui").toggle()
+      end, { desc = "Toggle DAP UI" })
+    end,
   },
 }
