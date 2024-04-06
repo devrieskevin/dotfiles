@@ -14,23 +14,26 @@ return {
         {
           type = "php",
           request = "launch",
-          name = "Listen for Xdebug",
+          name = "Listen for Xdebug (nvim-dap)",
           port = 9003,
         },
       }
 
-      dap.adapters.python = {
+      dap.adapters.debugpy = {
         type = "executable",
         command = vim.fn.stdpath("data") .. "/mason/bin/debugpy-adapter",
         args = {},
       }
+
+      -- Define python adapter as both `python` and `debugpy` for vscode compatibility
+      dap.adapters.python = dap.adapters.debugpy
 
       dap.configurations.python = {
         {
           -- The first three options are required by nvim-dap
           type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
           request = "launch",
-          name = "Launch file",
+          name = "Launch file (nvim-dap)",
 
           -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
 
@@ -62,7 +65,7 @@ return {
 
       dap.configurations.rust = {
         {
-          name = "Launch file",
+          name = "Launch file (nvim-dap)",
           type = "lldb",
           request = "launch",
           program = function()
@@ -77,9 +80,11 @@ return {
       -- Rust launch.json config might not work due to nvim-dap trying to be language agnostic.
       -- This is specifically the case for when the cargo attribute is used instead of the program attribute.
       -- See https://github.com/mfussenegger/nvim-dap/discussions/671
-      -- TODO: See if using rustaceans.nvim can help with this.
+      -- TODO: See if using https://github.com/mrcjkb/rustaceanvim can help with this.
       require("dap.ext.vscode").load_launchjs(nil, {
         lldb = { "rust", "cpp", "c" },
+        debugpy = { "python" },
+        php = { "php" },
       })
 
       vim.keymap.set("n", "<leader>db", function()
