@@ -51,7 +51,7 @@ return {
         },
       }
 
-      dap.adapters.codelldb = {
+      dap.adapters.lldb = {
         type = "server",
         port = "${port}",
         executable = {
@@ -63,7 +63,7 @@ return {
       dap.configurations.rust = {
         {
           name = "Launch file",
-          type = "codelldb",
+          type = "lldb",
           request = "launch",
           program = function()
             return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
@@ -73,6 +73,14 @@ return {
           args = {},
         },
       }
+
+      -- Rust launch.json config might not work due to nvim-dap trying to be language agnostic.
+      -- This is specifically the case for when the cargo attribute is used instead of the program attribute.
+      -- See https://github.com/mfussenegger/nvim-dap/discussions/671
+      -- TODO: See if using rustaceans.nvim can help with this.
+      require("dap.ext.vscode").load_launchjs(nil, {
+        lldb = { "rust", "cpp", "c" },
+      })
 
       vim.keymap.set("n", "<leader>db", function()
         dap.toggle_breakpoint()
