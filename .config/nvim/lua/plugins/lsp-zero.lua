@@ -23,6 +23,17 @@ return {
       end)
 
       lsp.setup()
+
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls",
+          "pyright",
+          "phpactor",
+          "tsserver",
+          "rust_analyzer",
+          "twiggy_language_server",
+        },
+      })
     end,
   },
 }
