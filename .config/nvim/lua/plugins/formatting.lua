@@ -14,6 +14,7 @@ return {
         formatters_by_ft = {
           lua = { "stylua" },
           twig = { "djlint", "twig-cs-fixer" },
+          python = { "ruff", "isort" },
           ["*"] = { "trim_whitespace" },
         },
       })
