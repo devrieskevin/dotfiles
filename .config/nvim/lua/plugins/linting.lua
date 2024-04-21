@@ -24,4 +24,20 @@ return {
       end, { desc = "Trigger linting for current file" })
     end,
   },
+  {
+    "rshkarin/mason-nvim-lint",
+    dependencies = {
+      { "williamboman/mason.nvim" },
+      { "mfussenegger/nvim-lint" },
+    },
+    config = function()
+      require("mason-nvim-lint").setup({
+        ensure_installed = {
+          "luacheck",
+          "ruff",
+          "phpstan",
+        },
+      })
+    end,
+  },
 }
