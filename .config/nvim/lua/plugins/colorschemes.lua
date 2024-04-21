@@ -11,4 +11,15 @@ return {
       vim.cmd.colorscheme("tokyonight")
     end,
   },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    config = function()
+      local catppuccin = require("catppuccin")
+
+      catppuccin.setup({
+        flavour = "mocha",
+      })
+    end,
+  },
 }
