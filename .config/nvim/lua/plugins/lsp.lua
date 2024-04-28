@@ -48,9 +48,6 @@ return {
       { "folke/neodev.nvim" },
     },
     config = function()
-      local neodev = require("neodev")
-      neodev.setup()
-
       local lspconfig = require("lspconfig")
 
       -- venv support code taken from: https://github.com/neovim/nvim-lspconfig/issues/500
