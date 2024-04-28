@@ -34,7 +34,20 @@ return {
           "twiggy_language_server",
         },
       })
-
+    end,
+  },
+  {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      { "folke/neodev.nvim" },
+    },
+    config = function()
       local lspconfig = require("lspconfig")
 
       -- venv support code taken from: https://github.com/neovim/nvim-lspconfig/issues/500
@@ -64,12 +77,6 @@ return {
           config.settings.python.pythonPath = get_python_path(config.root_dir)
         end,
       })
-    end,
-  },
-  {
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
     end,
   },
 }
