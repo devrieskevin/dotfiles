@@ -117,7 +117,7 @@ return {
     config = function()
       require("dapui").setup()
 
-      vim.keymap.set("n", "<leader>dt", function()
+      vim.keymap.set("n", "<leader>dd", function()
         require("dapui").toggle()
       end, { desc = "Toggle DAP UI" })
     end,
