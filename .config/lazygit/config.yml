@@ -1,6 +1,9 @@
 gui:
   authorColors:
     'Kevin de Vries': '#ffa500'
+  theme:
+    optionsTextColor:
+      - white
 
 git:
   merging:
