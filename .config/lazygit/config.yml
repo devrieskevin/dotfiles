@@ -1,3 +1,7 @@
+gui:
+  authorColors:
+    'Kevin de Vries': '#ffa500'
+
 git:
   merging:
     args: '--no-ff'
