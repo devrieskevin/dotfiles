@@ -11,6 +11,9 @@ return {
       local neotree = require("neo-tree")
 
       neotree.setup({
+        window = {
+          position = "float",
+        },
         filesystem = {
           filtered_items = {
             hide_dotfiles = false,
@@ -19,7 +22,7 @@ return {
         },
       })
 
-      vim.keymap.set("n", "<leader>nn", "<Cmd>Neotree toggle float<CR>")
+      vim.keymap.set("n", "<leader>nn", "<Cmd>Neotree toggle<CR>")
     end,
   },
 }
