@@ -1,0 +1,5 @@
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+
+[window]
+startup_mode = "Maximized"
