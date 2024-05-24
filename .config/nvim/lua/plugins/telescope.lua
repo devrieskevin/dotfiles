@@ -13,11 +13,8 @@ return {
           find_files = {
             find_command = {
               "rg",
-              "--no-ignore",
               "--hidden",
               "--files",
-              "-g",
-              "!**/node_modules/*",
               "-g",
               "!**/.git/*",
             },
@@ -34,6 +31,18 @@ return {
 
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+      vim.keymap.set("n", "<leader>FF", function()
+        return builtin.find_files({
+          find_command = {
+            "rg",
+            "--no-ignore",
+            "--hidden",
+            "--files",
+            "-g",
+            "!**/.git/*",
+          },
+        })
+      end, {})
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fk", builtin.keymaps, {})
 
