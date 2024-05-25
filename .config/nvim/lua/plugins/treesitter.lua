@@ -80,6 +80,14 @@ return {
               ["[M"] = "@function.outer",
             },
           },
+          lsp_interop = {
+            enable = true,
+            floating_preview_opts = { border = "single" },
+            peek_definition_code = {
+              ["<leader>tf"] = "@function.outer",
+              ["<leader>tF"] = "@class.outer",
+            },
+          },
         },
       })
     end,
