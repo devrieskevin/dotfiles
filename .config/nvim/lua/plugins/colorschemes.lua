@@ -7,8 +7,6 @@ return {
       tokyonight.setup({
         style = "night",
       })
-
-      vim.cmd.colorscheme("tokyonight")
     end,
   },
   {
@@ -20,6 +18,8 @@ return {
       catppuccin.setup({
         flavour = "mocha",
       })
+
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 }
