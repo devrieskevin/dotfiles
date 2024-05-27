@@ -3,3 +3,6 @@ normal = { family = "Hack Nerd Font", style = "Regular" }
 
 [window]
 startup_mode = "Maximized"
+
+[colors]
+cursor = { text = "#000000", cursor = "#ffffff" }
