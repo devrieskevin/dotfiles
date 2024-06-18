@@ -16,6 +16,7 @@ return {
           twig = { "djlint", "twig-cs-fixer" },
           python = { "ruff_fix", "ruff_format", "isort" },
           rust = { "rustfmt" },
+          markdown = { "prettier" },
           ["*"] = { "trim_whitespace" },
         },
       })
