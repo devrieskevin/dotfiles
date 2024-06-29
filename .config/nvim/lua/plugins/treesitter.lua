@@ -20,6 +20,7 @@ return {
           "python",
           "twig",
           "php",
+          "sql",
         },
         sync_install = false,
         highlight = { enable = true },
