@@ -30,7 +30,6 @@ return {
           "pyright",
           "phpactor",
           "tsserver",
-          "rust_analyzer",
           "twiggy_language_server",
         },
       })
