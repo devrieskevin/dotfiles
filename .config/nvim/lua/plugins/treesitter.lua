@@ -21,6 +21,7 @@ return {
           "twig",
           "php",
           "sql",
+          "rust",
         },
         sync_install = false,
         highlight = { enable = true },
