@@ -115,7 +115,46 @@ return {
       "nvim-neotest/nvim-nio",
     },
     config = function()
-      require("dapui").setup()
+      require("dapui").setup({
+        layouts = {
+          {
+            elements = {
+              {
+                id = "watches",
+                size = 0.0,
+              },
+              {
+                id = "breakpoints",
+                size = 0.1,
+              },
+              {
+                id = "stacks",
+                size = 0.1,
+              },
+              {
+                id = "scopes",
+                size = 0.8,
+              },
+            },
+            position = "left",
+            size = 40,
+          },
+          {
+            elements = {
+              {
+                id = "repl",
+                size = 0.5,
+              },
+              {
+                id = "console",
+                size = 0.5,
+              },
+            },
+            position = "bottom",
+            size = 10,
+          },
+        },
+      })
 
       vim.keymap.set("n", "<leader>dd", function()
         require("dapui").toggle()

@@ -18,6 +18,11 @@ return {
 
       catppuccin.setup({
         flavour = "mocha",
+        custom_highlights = function(colors)
+          return {
+            WinSeparator = { fg = colors.surface0 },
+          }
+        end,
       })
 
       vim.cmd.colorscheme("catppuccin")
