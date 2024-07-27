@@ -19,7 +19,7 @@ return {
             else
               gitsigns.nav_hunk("next")
             end
-          end)
+          end, { desc = "Navigate to next hunk" })
 
           map("n", "[c", function()
             if vim.wo.diff then
@@ -27,7 +27,7 @@ return {
             else
               gitsigns.nav_hunk("prev")
             end
-          end)
+          end, { desc = "Navigate to previous hunk" })
 
           map("n", "<leader>gs", "<Cmd>Gitsigns<CR>", { desc = 'Open Gitsigns options (run ":Gitsigns")' })
 
