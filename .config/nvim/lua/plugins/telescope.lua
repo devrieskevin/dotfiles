@@ -78,7 +78,7 @@ return {
 
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
       vim.keymap.set("n", "<leader>FF", function()
-        return builtin.find_files({
+        local current_opts = {
           find_command = {
             "rg",
             "--no-ignore",
@@ -87,7 +87,19 @@ return {
             "-g",
             "!**/.git/*",
           },
-        })
+        }
+
+        local find_files = function(opts)
+          return builtin.find_files(vim.tbl_deep_extend("force", current_opts, opts or {}))
+        end
+
+        current_opts.attach_mappings = function(_, map)
+          map("i", "<C-f>", search_in_directory_with(find_files))
+          map("n", "<C-f>", search_in_directory_with(find_files))
+          return true
+        end
+
+        return find_files()
       end, {})
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fk", builtin.keymaps, {})
