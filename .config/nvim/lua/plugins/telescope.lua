@@ -8,9 +8,48 @@ return {
     config = function()
       local telescope = require("telescope")
 
+      local builtin = require("telescope.builtin")
+
+      local search_in_directory_with = function(finder)
+        return function(_)
+          local action_state = require("telescope.actions.state")
+          local fb = require("telescope").extensions.file_browser
+          local current_line = action_state.get_current_line()
+
+          fb.file_browser({
+            files = false,
+            depth = false,
+            attach_mappings = function(_)
+              require("telescope.actions").select_default:replace(function()
+                local entry_path = action_state.get_selected_entry().Path
+                local dir = entry_path:is_dir() and entry_path or entry_path:parent()
+                local relative = dir:make_relative(vim.fn.getcwd())
+                local absolute = dir:absolute()
+
+                finder({
+                  results_title = relative .. "/",
+                  cwd = absolute,
+                  default_text = current_line,
+                })
+              end)
+
+              return true
+            end,
+          })
+        end
+      end
+
       telescope.setup({
         pickers = {
           find_files = {
+            mappings = {
+              i = {
+                ["<C-f>"] = search_in_directory_with(builtin.find_files),
+              },
+              n = {
+                ["<C-f>"] = search_in_directory_with(builtin.find_files),
+              },
+            },
             find_command = {
               "rg",
               "--hidden",
@@ -20,6 +59,14 @@ return {
             },
           },
           live_grep = {
+            mappings = {
+              i = {
+                ["<C-f>"] = search_in_directory_with(builtin.live_grep),
+              },
+              n = {
+                ["<C-f>"] = search_in_directory_with(builtin.live_grep),
+              },
+            },
             additional_args = {
               "--hidden",
               "-g",
@@ -29,7 +76,6 @@ return {
         },
       })
 
-      local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
       vim.keymap.set("n", "<leader>FF", function()
         return builtin.find_files({
