@@ -46,8 +46,19 @@ return {
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fk", builtin.keymaps, {})
 
+      vim.keymap.set("n", "<leader>fb", function()
+        telescope.extensions.file_browser.file_browser()
+      end)
+
       -- Set `fd` as an alias for `find_files` again
       builtin.fd = builtin.find_files
     end,
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
   },
 }
