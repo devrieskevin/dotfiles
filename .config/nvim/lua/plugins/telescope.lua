@@ -10,7 +10,7 @@ return {
 
       local builtin = require("telescope.builtin")
 
-      local search_in_directory_with = function(finder)
+      local search_in_directory_with = function(finder, opts)
         return function(_)
           local action_state = require("telescope.actions.state")
           local fb = require("telescope").extensions.file_browser
@@ -26,11 +26,11 @@ return {
                 local relative = dir:make_relative(vim.fn.getcwd())
                 local absolute = dir:absolute()
 
-                finder({
+                finder(vim.tbl_deep_extend("force", opts, {
                   results_title = relative .. "/",
                   cwd = absolute,
                   default_text = current_line,
-                })
+                }))
               end)
 
               return true
@@ -44,10 +44,10 @@ return {
           find_files = {
             mappings = {
               i = {
-                ["<C-f>"] = search_in_directory_with(builtin.find_files),
+                ["<C-f>"] = search_in_directory_with(builtin.find_files, {}),
               },
               n = {
-                ["<C-f>"] = search_in_directory_with(builtin.find_files),
+                ["<C-f>"] = search_in_directory_with(builtin.find_files, {}),
               },
             },
             find_command = {
@@ -61,10 +61,10 @@ return {
           live_grep = {
             mappings = {
               i = {
-                ["<C-f>"] = search_in_directory_with(builtin.live_grep),
+                ["<C-f>"] = search_in_directory_with(builtin.live_grep, {}),
               },
               n = {
-                ["<C-f>"] = search_in_directory_with(builtin.live_grep),
+                ["<C-f>"] = search_in_directory_with(builtin.live_grep, {}),
               },
             },
             additional_args = {
@@ -78,7 +78,7 @@ return {
 
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
       vim.keymap.set("n", "<leader>FF", function()
-        return builtin.find_files({
+        local opts = {
           find_command = {
             "rg",
             "--no-ignore",
@@ -87,7 +87,18 @@ return {
             "-g",
             "!**/.git/*",
           },
-        })
+        }
+
+        opts.mappings = {
+          i = {
+            ["<C-f>"] = search_in_directory_with(builtin.find_files, opts),
+          },
+          n = {
+            ["<C-f>"] = search_in_directory_with(builtin.find_files, opts),
+          },
+        }
+
+        return builtin.find_files(opts)
       end, {})
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fk", builtin.keymaps, {})
