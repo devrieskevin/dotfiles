@@ -6,6 +6,7 @@ return {
     },
     config = function()
       local cmp = require("cmp")
+      local types = require('cmp.types')
 
       cmp.setup({
         snippet = {
@@ -22,24 +23,24 @@ return {
           { name = "buffer" },
         }),
         mapping = cmp.mapping.preset.insert({
-          ["<C-y>"] = cmp.mapping.confirm({ select = false }),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<Up>"] = cmp.mapping.select_prev_item({ behavior = "select" }),
-          ["<Down>"] = cmp.mapping.select_next_item({ behavior = "select" }),
-          ["<C-p>"] = cmp.mapping(function()
-            if cmp.visible() then
-              cmp.select_prev_item({ behavior = "select" })
-            else
-              cmp.complete()
-            end
-          end),
-          ["<C-n>"] = cmp.mapping(function()
-            if cmp.visible() then
-              cmp.select_next_item({ behavior = "select" })
-            else
-              cmp.complete()
-            end
-          end),
+          ["<C-n>"] = {
+            i = function()
+              if cmp.visible() then
+                cmp.select_next_item({ behavior = types.cmp.SelectBehavior.Select })
+              else
+                cmp.complete()
+              end
+            end,
+          },
+          ["<C-p>"] = {
+            i = function()
+              if cmp.visible() then
+                cmp.select_prev_item({ behavior = types.cmp.SelectBehavior.Select })
+              else
+                cmp.complete()
+              end
+            end,
+          },
         }),
       })
     end,
