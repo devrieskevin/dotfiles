@@ -6,7 +6,7 @@ return {
     },
     config = function()
       local cmp = require("cmp")
-      local types = require('cmp.types')
+      local types = require("cmp.types")
 
       cmp.setup({
         snippet = {
@@ -40,6 +40,9 @@ return {
                 cmp.complete()
               end
             end,
+          },
+          ["<C-y>"] = {
+            i = cmp.mapping.confirm({ select = true }),
           },
         }),
       })
