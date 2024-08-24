@@ -77,7 +77,8 @@ return {
       })
 
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-      vim.keymap.set("n", "<leader>FF", function()
+
+      local function find_all_files(opts)
         local current_opts = {
           find_command = {
             "rg",
@@ -87,21 +88,38 @@ return {
             "-g",
             "!**/.git/*",
           },
+          attach_mappings = function(_, map)
+            map("i", "<C-f>", search_in_directory_with(find_all_files))
+            map("n", "<C-f>", search_in_directory_with(find_all_files))
+            return true
+          end,
         }
 
-        local find_files = function(opts)
-          return builtin.find_files(vim.tbl_deep_extend("force", current_opts, opts or {}))
-        end
+        return builtin.find_files(vim.tbl_deep_extend("force", current_opts, opts or {}))
+      end
+      vim.keymap.set("n", "<leader>FF", find_all_files, {})
 
-        current_opts.attach_mappings = function(_, map)
-          map("i", "<C-f>", search_in_directory_with(find_files))
-          map("n", "<C-f>", search_in_directory_with(find_files))
-          return true
-        end
-
-        return find_files()
-      end, {})
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+
+      local function live_grep_all(opts)
+        local current_opts = {
+          additional_args = {
+            "--no-ignore",
+            "--hidden",
+            "-g",
+            "!**/.git/*",
+          },
+          attach_mappings = function(_, map)
+            map("i", "<C-f>", search_in_directory_with(live_grep_all))
+            map("n", "<C-f>", search_in_directory_with(live_grep_all))
+            return true
+          end,
+        }
+
+        return builtin.live_grep(vim.tbl_deep_extend("force", current_opts, opts or {}))
+      end
+      vim.keymap.set("n", "<leader>FG", live_grep_all, {})
+
       vim.keymap.set("n", "<leader>fk", builtin.keymaps, {})
 
       vim.keymap.set("n", "<leader>fb", function()
