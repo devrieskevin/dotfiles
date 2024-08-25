@@ -74,6 +74,11 @@ return {
             },
           },
         },
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown({}),
+          },
+        },
       })
 
       vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
@@ -136,5 +141,15 @@ return {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",
     },
+  },
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("telescope").load_extension("ui-select")
+    end,
   },
 }
