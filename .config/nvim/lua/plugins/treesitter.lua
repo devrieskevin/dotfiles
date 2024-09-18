@@ -22,6 +22,9 @@ return {
           "php",
           "sql",
           "rust",
+          "css",
+          "scss",
+          "yaml"
         },
         sync_install = false,
         highlight = { enable = true },

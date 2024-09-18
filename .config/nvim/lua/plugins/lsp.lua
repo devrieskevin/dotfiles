@@ -51,6 +51,8 @@ return {
           "twiggy_language_server",
           "docker_compose_language_service",
           "dockerls",
+          "yamlls",
+          "cssls",
         },
         handlers = {
           default_setup,
