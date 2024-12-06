@@ -2,23 +2,23 @@ return {
   {
     "tzachar/cmp-ai",
     dependencies = "nvim-lua/plenary.nvim",
-  },
-  config = function()
-    local cmp_ai = require("cmp_ai.config")
+    config = function()
+      local cmp_ai = require("cmp_ai.config")
 
-    cmp_ai:setup({
-      max_lines = 100,
-      provider = "Ollama",
-      provider_options = {
-        model = "deepseek-coder",
-      },
-      notify = true,
-      notify_callback = function(msg)
-        vim.notify(msg)
-      end,
-      run_on_every_keystroke = true,
-    })
-  end,
+      cmp_ai:setup({
+        max_lines = 100,
+        provider = "Ollama",
+        provider_options = {
+          model = "deepseek-coder",
+        },
+        notify = true,
+        notify_callback = function(msg)
+          vim.notify(msg)
+        end,
+        run_on_every_keystroke = true,
+      })
+    end,
+  },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
