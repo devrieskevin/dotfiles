@@ -9,7 +9,7 @@ return {
         max_lines = 100,
         provider = "Ollama",
         provider_options = {
-          model = "deepseek-coder",
+          model = "codellama:7b-code",
         },
         notify = true,
         notify_callback = function(msg)
