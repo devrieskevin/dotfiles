@@ -10,11 +10,10 @@ return {
         provider = "Ollama",
         provider_options = {
           model = "codellama:7b-code",
+          options = {
+            num_predict = 50,
+          },
         },
-        notify = true,
-        notify_callback = function(msg)
-          vim.notify(msg)
-        end,
         run_on_every_keystroke = true,
       })
     end,
