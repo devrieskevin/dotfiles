@@ -12,6 +12,7 @@ return {
           model = "codellama:7b-code",
           options = {
             num_predict = 50,
+            temperature = 0.2,
           },
         },
         run_on_every_keystroke = true,
