@@ -9,7 +9,13 @@ return {
         max_lines = 100,
         provider = "Ollama",
         provider_options = {
-          model = "codellama:7b-code",
+          model = "codegemma:7b-code",
+          prompt = function (before_lines, after_lines)
+            return before_lines
+          end,
+          suffix = function (after_lines)
+            return after_lines
+          end,
           options = {
             num_predict = 50,
             temperature = 0.2,
