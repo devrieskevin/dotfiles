@@ -40,7 +40,6 @@ return {
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "copilot" },
-          { name = "cmp_ai" },
         }, {
           { name = "buffer" },
         }),
@@ -66,6 +65,17 @@ return {
           ["<C-y>"] = {
             i = cmp.mapping.confirm({ select = true }),
           },
+          ["<C-x>"] = cmp.mapping(
+            cmp.mapping.complete({
+              config = {
+                sources = cmp.config.sources({
+                  { name = "copilot" },
+                  { name = "cmp_ai" },
+                }),
+              },
+            }),
+            { "i" }
+          ),
         }),
         window = {
           completion = cmp.config.window.bordered(),
