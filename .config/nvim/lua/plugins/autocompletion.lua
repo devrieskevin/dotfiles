@@ -9,7 +9,14 @@ return {
         max_lines = 100,
         provider = "Ollama",
         provider_options = {
-          model = "codellama:7b-code",
+          model = "granite-code:3b",
+          -- Uncomment prompt and suffix for `<fim_*>` based templates
+          prompt = function(lines_before, lines_after)
+            return lines_before
+          end,
+          suffix = function(lines_after)
+            return lines_after
+          end,
           options = {
             num_predict = 50,
             temperature = 0.2,
