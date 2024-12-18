@@ -9,7 +9,7 @@ return {
         max_lines = 100,
         provider = "Ollama",
         provider_options = {
-          model = "starcoder2:latest",
+          model = "granite-code:3b",
           -- Uncomment prompt and suffix for `<fim_*>` based templates
           prompt = function(lines_before, lines_after)
             return lines_before
