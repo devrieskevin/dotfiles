@@ -17,6 +17,10 @@ return {
           python = { "ruff_fix", "ruff_format", "isort" },
           rust = { "rustfmt" },
           markdown = { "prettier" },
+          javascript = { "prettier" },
+          javascriptreact = { "prettier" },
+          typescript = { "prettier" },
+          typescriptreact = { "prettier" },
           ["*"] = { "trim_whitespace" },
         },
       })
