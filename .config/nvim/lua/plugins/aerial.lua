@@ -12,6 +12,6 @@ return {
         vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
       end,
     })
-    vim.keymap.set("n", "<leader>aa", "<cmd>AerialToggle!<CR>")
+    vim.keymap.set("n", "<leader>cn", "<cmd>AerialToggle!<CR>")
   end,
 }
