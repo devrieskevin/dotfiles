@@ -1,6 +1,7 @@
 return {
   {
     "christoomey/vim-tmux-navigator",
+    branch = "master",
     cmd = {
       "TmuxNavigateLeft",
       "TmuxNavigateDown",

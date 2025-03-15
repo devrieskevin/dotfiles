@@ -19,12 +19,14 @@ end
 return {
   {
     "williamboman/mason.nvim",
+    version = "^1.11",
     config = function()
       require("mason").setup()
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    version = "^1.32",
     dependencies = {
       { "hrsh7th/cmp-nvim-lsp" },
     },
@@ -78,6 +80,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    version = "^1.7",
     dependencies = {
       { "folke/neodev.nvim" },
     },

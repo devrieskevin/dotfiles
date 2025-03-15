@@ -1,6 +1,7 @@
 return {
   {
     "tzachar/cmp-ai",
+    branch = "main",
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
       local cmp_ai = require("cmp_ai.config")
@@ -28,6 +29,7 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    version = "^0.2.0",
     dependencies = {
       { "L3MON4D3/LuaSnip" },
       { "tzachar/cmp-ai" },

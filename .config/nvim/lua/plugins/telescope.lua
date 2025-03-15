@@ -1,7 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.6",
+    version = "^0.1",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -137,6 +137,7 @@ return {
   },
   {
     "nvim-telescope/telescope-file-browser.nvim",
+    branch = "master",
     dependencies = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",
@@ -144,6 +145,7 @@ return {
   },
   {
     "nvim-telescope/telescope-ui-select.nvim",
+    branch = "master",
     dependencies = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",

@@ -1,6 +1,7 @@
 return {
   {
     "folke/tokyonight.nvim",
+    version = "^4.11",
     config = function()
       local tokyonight = require("tokyonight")
 
@@ -11,6 +12,7 @@ return {
   },
   {
     "catppuccin/nvim",
+    vrsion = "^1.9",
     name = "catppuccin",
     priority = 1000,
     config = function()

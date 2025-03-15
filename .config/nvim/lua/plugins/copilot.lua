@@ -1,6 +1,7 @@
 return {
   {
     "zbirenbaum/copilot.lua",
+    branch = "master",
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
@@ -12,6 +13,7 @@ return {
   },
   {
     "zbirenbaum/copilot-cmp",
+    branch = "master",
     config = function()
       require("copilot_cmp").setup()
     end,
