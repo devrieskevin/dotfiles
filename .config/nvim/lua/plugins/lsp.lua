@@ -19,12 +19,14 @@ end
 return {
   {
     "williamboman/mason.nvim",
+    version = "^1.11",
     config = function()
       require("mason").setup()
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    version = "^1.32",
     dependencies = {
       { "hrsh7th/cmp-nvim-lsp" },
     },
@@ -47,7 +49,7 @@ return {
           "lua_ls",
           "pyright",
           "phpactor",
-          "tsserver",
+          "ts_ls",
           "twiggy_language_server",
           "docker_compose_language_service",
           "dockerls",
@@ -78,9 +80,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      { "folke/neodev.nvim" },
-    },
+    version = "^1.7",
     config = function()
       vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
       vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")

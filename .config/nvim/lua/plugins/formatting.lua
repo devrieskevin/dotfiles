@@ -1,6 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
+    version = "^9.0",
     config = function()
       local conform = require("conform")
 
@@ -32,6 +33,7 @@ return {
   },
   {
     "zapling/mason-conform.nvim",
+    branch = "main",
     dependencies = {
       { "williamboman/mason.nvim" },
       { "stevearc/conform.nvim" },

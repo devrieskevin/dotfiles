@@ -1,6 +1,7 @@
 return {
   {
     "mfussenegger/nvim-lint",
+    branch = "master",
     config = function()
       local lint = require("lint")
 
@@ -30,6 +31,7 @@ return {
   },
   {
     "rshkarin/mason-nvim-lint",
+    version = "^0.1",
     dependencies = {
       { "williamboman/mason.nvim" },
       { "mfussenegger/nvim-lint" },

@@ -1,6 +1,7 @@
 return {
   {
     "lewis6991/gitsigns.nvim",
+    version = "^1.0",
     config = function()
       require("gitsigns").setup({
         on_attach = function(bufnr)
@@ -62,13 +63,16 @@ return {
   },
   {
     "tpope/vim-fugitive",
+    version = "^3.7",
   },
   {
     "rbong/vim-flog",
+    version = "^3.0",
     cmd = { "Flog" },
   },
   {
     "kdheepak/lazygit.nvim",
+    branch = "main",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
