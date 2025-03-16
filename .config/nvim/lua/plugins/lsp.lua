@@ -49,7 +49,7 @@ return {
           "lua_ls",
           "pyright",
           "phpactor",
-          "tsserver",
+          "ts_ls",
           "twiggy_language_server",
           "docker_compose_language_service",
           "dockerls",
