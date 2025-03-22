@@ -8,6 +8,12 @@ return {
     ollama = {
       model = "granite-code:3b",
     },
+    vendors = {
+      ["ollama-codellama"] = {
+        __inherited_from = "ollama",
+        model = "codellama:7b-code",
+      }
+    },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
