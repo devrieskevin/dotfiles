@@ -2,7 +2,8 @@ return {
   "yetone/avante.nvim",
   enabled = false,
   event = "VeryLazy",
-  commit = "f60f150a21e2a32f1b0ee194abd7f2be3bab92db",
+  -- TODO: Change to `version = "0.0.24"` whenever it becomes available.
+  branch = "main",
   opts = {
     provider = "ollama",
     ollama = {
