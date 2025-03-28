@@ -1,6 +1,6 @@
 return {
   "yetone/avante.nvim",
-  enabled = false,
+  -- enabled = false,
   event = "VeryLazy",
   -- TODO: Change to `version = "0.0.24"` whenever it becomes available.
   branch = "main",
