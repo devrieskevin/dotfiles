@@ -4,6 +4,9 @@ gui:
   theme:
     optionsTextColor:
       - white
+  branchColorPatterns:
+    '^feature/': '#00ff00'
+    '^hotfix/': '#ff0000'
 
 git:
   merging:
