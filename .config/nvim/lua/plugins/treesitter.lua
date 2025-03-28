@@ -25,11 +25,26 @@ return {
           "rust",
           "css",
           "scss",
-          "yaml"
+          "yaml",
         },
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
+      })
+
+      -- Treesitter folding implementation taken from: https://stackoverflow.com/a/79405264.
+      vim.api.nvim_create_autocmd({ "FileType" }, {
+        callback = function()
+          -- check if treesitter has parser
+          if require("nvim-treesitter.parsers").has_parser() then
+            -- use treesitter folding
+            vim.opt.foldmethod = "expr"
+            vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+          else
+            -- use alternative foldmethod
+            vim.opt.foldmethod = "syntax"
+          end
+        end,
       })
     end,
   },
