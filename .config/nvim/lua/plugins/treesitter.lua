@@ -38,11 +38,11 @@ return {
           -- check if treesitter has parser
           if require("nvim-treesitter.parsers").has_parser() then
             -- use treesitter folding
-            vim.opt.foldmethod = "expr"
-            vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+            vim.o.foldmethod = "expr"
+            vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
           else
-            -- use alternative foldmethod
-            vim.opt.foldmethod = "syntax"
+            -- use default folding
+            vim.o.foldmethod = "syntax"
           end
         end,
       })
