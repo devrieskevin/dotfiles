@@ -1,9 +1,8 @@
 unsetopt nomatch
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-export PATH="/usr/local/sbin:$PATH"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Xdebug aliases
 alias xd_on='export XDEBUG_CONFIG="idekey=PHPSTORM"'
@@ -27,6 +26,10 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Uses single quotes to prevent variable expansion
 alias dr='$(git rev-parse --show-toplevel)/vendor/bin/drush'
+
+if command -v symfony &>/dev/null; then
+    eval "$(symfony completion)"
+fi
 
 alias lg='lazygit'
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml"
