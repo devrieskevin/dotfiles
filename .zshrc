@@ -29,7 +29,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 alias dr='$(git rev-parse --show-toplevel)/vendor/bin/drush'
 
 alias lg='lazygit'
-export LG_CONFIG_FILE="$HOME/dotfiles/.config/lazygit/config.yml"
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml"
 
 eval "$(zoxide init zsh)"
 
