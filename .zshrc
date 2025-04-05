@@ -43,5 +43,7 @@ eval "$(starship init zsh)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+eval "$(docker completion zsh)"
+
 export LANG="en_US.UTF-8"
 
