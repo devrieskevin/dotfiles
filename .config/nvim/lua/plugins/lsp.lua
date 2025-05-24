@@ -18,12 +18,10 @@ end
 
 return {
   {
-    "williamboman/mason.nvim",
-    version = "^1.11",
-    config = function()
-      require("mason").setup()
-    end,
-  },
+    "mason-org/mason.nvim",
+    version = "^2.0",
+    opts = {},
+},
   {
     "williamboman/mason-lspconfig.nvim",
     version = "^1.32",

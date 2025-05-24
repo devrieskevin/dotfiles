@@ -33,7 +33,7 @@ return {
     "rshkarin/mason-nvim-lint",
     version = "^0.1",
     dependencies = {
-      { "williamboman/mason.nvim" },
+      { "mason-org/mason.nvim" },
       { "mfussenegger/nvim-lint" },
     },
     config = function()
