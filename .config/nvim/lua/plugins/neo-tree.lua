@@ -24,6 +24,7 @@ return {
 
       vim.keymap.set("n", "<leader>nn", "<Cmd>Neotree toggle<CR>")
       vim.keymap.set("n", "<leader>nr", "<Cmd>Neotree reveal<CR>")
+      vim.keymap.set("n", "<leader>nb", "<Cmd>Neotree buffers<CR>")
     end,
   },
 }
