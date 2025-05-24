@@ -12,7 +12,7 @@ return {
   },
   {
     "catppuccin/nvim",
-    vrsion = "^1.9",
+    version = "^1.9",
     name = "catppuccin",
     priority = 1000,
     config = function()
@@ -25,6 +25,10 @@ return {
             WinSeparator = { fg = colors.surface0 },
           }
         end,
+        integrations = {
+          aerial = true,
+          harpoon = true,
+        }
       })
 
       vim.cmd.colorscheme("catppuccin")
