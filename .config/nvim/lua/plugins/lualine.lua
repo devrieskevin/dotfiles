@@ -9,6 +9,7 @@ return {
       options = {
         theme = "catppuccin",
       },
+      extensions = { "aerial", "avante", "quickfix" },
     },
   },
 }
