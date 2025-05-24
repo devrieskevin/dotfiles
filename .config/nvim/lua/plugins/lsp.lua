@@ -21,22 +21,17 @@ return {
     "mason-org/mason.nvim",
     version = "^2.0",
     opts = {},
-},
+  },
   {
-    "williamboman/mason-lspconfig.nvim",
-    version = "^1.32",
+    "mason-org/mason-lspconfig.nvim",
+    version = "^2.0",
     dependencies = {
+      { "mason-org/mason.nvim" },
       { "hrsh7th/cmp-nvim-lsp" },
+      { "neovim/nvim-lspconfig" },
     },
     config = function()
       local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local lspconfig = require("lspconfig")
-
-      local default_setup = function(server)
-        lspconfig[server].setup({
-          capabilities = lsp_capabilities,
-        })
-      end
 
       -- venv support code taken from: https://github.com/neovim/nvim-lspconfig/issues/500
       local util = require("lspconfig/util")
@@ -54,31 +49,30 @@ return {
           "yamlls",
           "cssls",
         },
-        handlers = {
-          default_setup,
-          pyright = function()
-            lspconfig.pyright.setup({
-              capabilities = lsp_capabilities,
-              before_init = function(_, config)
-                config.settings.python.pythonPath = get_python_path(config.root_dir, path)
-              end,
-            })
-          end,
-          phpactor = function()
-            lspconfig.phpactor.setup({
-              capabilities = lsp_capabilities,
-              init_options = {
-                ["language_server_worse_reflection.inlay_hints.enable"] = true,
-              },
-            })
-          end,
+      })
+
+      vim.lsp.config("*", {
+        capabilities = lsp_capabilities,
+      })
+
+      vim.lsp.config("pyright", {
+        capabilities = lsp_capabilities,
+        before_init = function(_, config)
+          config.settings.python.pythonPath = get_python_path(config.root_dir, path)
+        end,
+      })
+
+      vim.lsp.config("phpactor", {
+        capabilities = lsp_capabilities,
+        init_options = {
+          ["language_server_worse_reflection.inlay_hints.enable"] = true,
         },
       })
     end,
   },
   {
     "neovim/nvim-lspconfig",
-    version = "^1.7",
+    version = "^2.0",
     config = function()
       vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
       vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
