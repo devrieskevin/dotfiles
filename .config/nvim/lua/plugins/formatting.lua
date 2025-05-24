@@ -35,7 +35,7 @@ return {
     "zapling/mason-conform.nvim",
     branch = "main",
     dependencies = {
-      { "williamboman/mason.nvim" },
+      { "mason-org/mason.nvim" },
       { "stevearc/conform.nvim" },
     },
     config = function()

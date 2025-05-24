@@ -157,7 +157,7 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
     version = "^2.4",
     dependencies = {
-      "williamboman/mason.nvim",
+      "mason-org/mason.nvim",
       "mfussenegger/nvim-dap",
     },
     config = function()
