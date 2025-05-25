@@ -19,8 +19,7 @@ return {
             return lines_after
           end,
           options = {
-            num_predict = 50,
-            temperature = 0.2,
+            stop = { "\n" },
           },
         },
         run_on_every_keystroke = true,
