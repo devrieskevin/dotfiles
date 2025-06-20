@@ -6,14 +6,14 @@ return {
   branch = "main",
   opts = {
     provider = "ollama",
-    ollama = {
-      model = "granite-code:3b",
-    },
-    vendors = {
+    providers = {
+      ollama = {
+        model = "granite-code:3b",
+      },
       ["ollama-codellama"] = {
         __inherited_from = "ollama",
         model = "codellama:7b-code",
-      }
+      },
     },
     hints = {
       enabled = false,
