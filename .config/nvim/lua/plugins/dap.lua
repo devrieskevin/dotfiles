@@ -18,6 +18,16 @@ return {
           name = "Listen for Xdebug (nvim-dap)",
           port = 9003,
         },
+        {
+          type = "php",
+          request = "launch",
+          name = "Listen for Xdebug with DDEV (nvim-dap)",
+          hostname = "0.0.0.0",
+          port = 9003,
+          pathMappings = {
+            ["/var/www/html"] = "${workspaceFolder}",
+          },
+        },
       }
 
       dap.adapters.debugpy = {
