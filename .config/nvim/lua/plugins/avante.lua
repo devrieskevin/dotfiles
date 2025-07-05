@@ -2,17 +2,20 @@ return {
   "yetone/avante.nvim",
   -- enabled = false,
   event = "VeryLazy",
-  -- TODO: Change to `version = "0.0.24"` whenever it becomes available.
   branch = "main",
   opts = {
-    provider = "ollama",
+    provider = "copilot",
     providers = {
       ollama = {
         model = "granite-code:3b",
+        is_env_set = function ()
+          local Providers = require("avante.providers")
+          local ok, _ = pcall(function () return Providers.ollama:models_list() end)
+          return ok
+        end,
       },
-      ["ollama-codellama"] = {
-        __inherited_from = "ollama",
-        model = "codellama:7b-code",
+      copilot = {
+        model = "claude-3.7-sonnet",
       },
     },
     hints = {
