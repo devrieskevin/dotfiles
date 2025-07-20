@@ -48,6 +48,8 @@ return {
           "dockerls",
           "yamlls",
           "cssls",
+          "wgsl_analyzer",
+          "html",
         },
       })
 
@@ -67,6 +69,12 @@ return {
         init_options = {
           ["language_server_worse_reflection.inlay_hints.enable"] = true,
         },
+      })
+
+      vim.lsp.config("wgsl_analyzer", {
+        filetypes = { "wgsl", "wesl" },
+        capabilities = lsp_capabilities,
+        cmd = { "wgsl_analyzer" },
       })
     end,
   },

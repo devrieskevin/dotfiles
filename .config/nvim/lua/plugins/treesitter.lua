@@ -26,6 +26,7 @@ return {
           "css",
           "scss",
           "yaml",
+          "wgsl",
         },
         sync_install = false,
         highlight = { enable = true },
