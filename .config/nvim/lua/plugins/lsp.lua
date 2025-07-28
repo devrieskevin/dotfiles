@@ -74,7 +74,6 @@ return {
       vim.lsp.config("wgsl_analyzer", {
         filetypes = { "wgsl", "wesl" },
         capabilities = lsp_capabilities,
-        cmd = { "wgsl_analyzer" },
       })
     end,
   },
