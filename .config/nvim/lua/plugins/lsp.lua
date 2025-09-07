@@ -50,6 +50,7 @@ return {
           "cssls",
           "wgsl_analyzer",
           "html",
+          "bashls",
         },
       })
 
@@ -74,6 +75,14 @@ return {
       vim.lsp.config("wgsl_analyzer", {
         filetypes = { "wgsl", "wesl" },
         capabilities = lsp_capabilities,
+      })
+
+      vim.lsp.config("bashls", {
+        filetypes = {
+          "bash",
+          "sh",
+          "zsh",
+        },
       })
     end,
   },
