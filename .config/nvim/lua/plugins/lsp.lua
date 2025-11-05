@@ -69,6 +69,7 @@ return {
         capabilities = lsp_capabilities,
         init_options = {
           ["language_server_worse_reflection.inlay_hints.enable"] = true,
+          ["language_server_worse_reflection.inlay_hints.types"] = true,
         },
       })
 
