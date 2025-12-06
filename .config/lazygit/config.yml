@@ -11,3 +11,4 @@ gui:
 git:
   merging:
     args: '--no-ff'
+  autoStageResolvedConflicts: false
