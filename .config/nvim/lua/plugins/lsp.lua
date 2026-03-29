@@ -120,7 +120,7 @@ return {
         callback = function(event)
           local id = vim.tbl_get(event, "data", "client_id")
           local client = id and vim.lsp.get_client_by_id(id)
-          if client == nil or not client.supports_method("textDocument/inlayHint") then
+          if client == nil or not client:supports_method("textDocument/inlayHint") then
             return
           end
 
