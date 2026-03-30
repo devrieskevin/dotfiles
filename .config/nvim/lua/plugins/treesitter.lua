@@ -5,7 +5,7 @@ return {
     build = ":TSUpdate",
     lazy = false,
     config = function()
-      require('nvim-treesitter').install({
+      local languages = {
         "c",
         "lua",
         "vim",
@@ -25,13 +25,27 @@ return {
         "scss",
         "yaml",
         "wgsl",
-      })
+      }
+
+      require('nvim-treesitter').install(languages)
+
+      local filetypes = vim.iter(require('nvim-treesitter').get_installed("parsers"))
+        :map(function (language)
+          return vim.treesitter.language.get_filetypes(language)
+        end)
+        :flatten()
+        :unique()
+        :totable()
 
       vim.api.nvim_create_autocmd({ "FileType" }, {
+        pattern = filetypes,
         callback = function()
-          -- use treesitter folding
-          vim.o.foldmethod = "expr"
-          vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+          vim.treesitter.start()
+
+          vim.wo.foldmethod = "expr"
+          vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
         end
       })
     end,
