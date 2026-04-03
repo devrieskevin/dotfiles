@@ -15,3 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
+-- Enable builtin plugins
+vim.cmd("packadd nvim.difftool")
+vim.cmd("packadd nvim.undotree")
+vim.cmd("packadd nohlsearch")
