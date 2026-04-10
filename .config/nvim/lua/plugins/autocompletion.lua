@@ -28,7 +28,7 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    version = "^0.2.0",
+    branch = "main",
     dependencies = {
       { "L3MON4D3/LuaSnip" },
       { "tzachar/cmp-ai" },
