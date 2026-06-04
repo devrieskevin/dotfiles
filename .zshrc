@@ -1,3 +1,5 @@
+autoload -Uz compinit && compinit
+
 unsetopt nomatch
 
 export NVM_DIR="$HOME/.nvm"
