@@ -2,6 +2,7 @@ return {
   {
     "mfussenegger/nvim-lint",
     branch = "master",
+    enabled = false,
     config = function()
       local lint = require("lint")
 
@@ -32,6 +33,7 @@ return {
   {
     "rshkarin/mason-nvim-lint",
     version = "^0.1",
+    enabled = false,
     dependencies = {
       { "mason-org/mason.nvim" },
       { "mfussenegger/nvim-lint" },

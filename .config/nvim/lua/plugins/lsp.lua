@@ -20,11 +20,13 @@ return {
   {
     "mason-org/mason.nvim",
     version = "^2.0",
+    enabled = false,
     opts = {},
   },
   {
     "mason-org/mason-lspconfig.nvim",
     version = "^2.0",
+    enabled = false,
     dependencies = {
       { "mason-org/mason.nvim" },
       { "hrsh7th/cmp-nvim-lsp" },
@@ -90,6 +92,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     version = "^2.0",
+    enabled = false,
     config = function()
       vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
       vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")

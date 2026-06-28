@@ -2,6 +2,7 @@ return {
   {
     "mfussenegger/nvim-dap",
     version = "^0.10",
+    enabled = false,
     config = function()
       local dap = require("dap")
 
@@ -118,6 +119,7 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     branch = "master",
+    enabled = false,
     dependencies = {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio",
@@ -172,6 +174,7 @@ return {
   {
     "jay-babu/mason-nvim-dap.nvim",
     version = "^2.4",
+    enabled = false,
     dependencies = {
       "mason-org/mason.nvim",
       "mfussenegger/nvim-dap",
