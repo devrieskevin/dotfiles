@@ -1,6 +1,6 @@
 vim.pack.add({
   { src = "https://github.com/lewis6991/gitsigns.nvim", version = vim.version.range("^1.0") },
-  { src = "https://github.com/tpope/vim-fugitive", version = vim.version.range("^3.7") },
+  { src = "https://github.com/tpope/vim-fugitive", version = "master" },
   { src = "https://github.com/rbong/vim-flog", version = vim.version.range("^3.0") },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/kdheepak/lazygit.nvim", version = "main" },
