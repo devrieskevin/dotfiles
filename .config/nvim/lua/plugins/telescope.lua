@@ -2,6 +2,7 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     version = "^0.1",
+    enabled = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -138,6 +139,7 @@ return {
   {
     "nvim-telescope/telescope-file-browser.nvim",
     branch = "master",
+    enabled = false,
     dependencies = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",
@@ -146,6 +148,7 @@ return {
   {
     "nvim-telescope/telescope-ui-select.nvim",
     branch = "master",
+    enabled = false,
     dependencies = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",

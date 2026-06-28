@@ -2,6 +2,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     branch = "master",
+    enabled = false,
     dependencies = {
       { "nvim-tree/nvim-web-devicons", opt = true },
     },

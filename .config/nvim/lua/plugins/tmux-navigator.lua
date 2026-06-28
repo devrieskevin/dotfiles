@@ -2,6 +2,7 @@ return {
   {
     "christoomey/vim-tmux-navigator",
     branch = "master",
+    enabled = false,
     cmd = {
       "TmuxNavigateLeft",
       "TmuxNavigateDown",
