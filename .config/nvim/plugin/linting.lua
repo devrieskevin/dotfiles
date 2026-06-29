@@ -2,7 +2,7 @@ vim.pack.add({
   { src = "https://github.com/mfussenegger/nvim-lint", version = "master" },
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/rshkarin/mason-nvim-lint", version = vim.version.range("^0.1") },
-})
+}, { load = true })
 
 local lint = require("lint")
 

@@ -4,7 +4,7 @@ vim.pack.add({
   { src = "https://github.com/rbong/vim-flog", version = vim.version.range("^3.0") },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/kdheepak/lazygit.nvim", version = "main" },
-})
+}, { load = true })
 
 require("gitsigns").setup({
   on_attach = function(bufnr)

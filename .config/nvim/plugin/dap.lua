@@ -4,7 +4,7 @@ vim.pack.add({
   { src = "https://github.com/rcarriga/nvim-dap-ui", version = "master" },
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/jay-babu/mason-nvim-dap.nvim", version = vim.version.range("^2.4") },
-})
+}, { load = true })
 
 local dap = require("dap")
 

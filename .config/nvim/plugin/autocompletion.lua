@@ -3,7 +3,7 @@ vim.pack.add({
   { src = "https://github.com/L3MON4D3/LuaSnip" },
   { src = "https://github.com/tzachar/cmp-ai", version = "main" },
   { src = "https://github.com/hrsh7th/nvim-cmp", version = "main" },
-})
+}, { load = true })
 
 local cmp_ai = require("cmp_ai.config")
 

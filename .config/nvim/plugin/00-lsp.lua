@@ -3,7 +3,7 @@ vim.pack.add({
   { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
   { src = "https://github.com/neovim/nvim-lspconfig", version = vim.version.range("^2.0") },
   { src = "https://github.com/mason-org/mason-lspconfig.nvim", version = vim.version.range("^2.0") },
-})
+}, { load = true })
 
 local function get_python_path(workspace, path)
   -- Use activated virtualenv.

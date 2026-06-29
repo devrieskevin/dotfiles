@@ -4,7 +4,7 @@ vim.pack.add({
     name = "catppuccin",
     version = vim.version.range("^2.0"),
   },
-})
+}, { load = true })
 
 local catppuccin = require("catppuccin")
 

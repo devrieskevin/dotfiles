@@ -5,7 +5,7 @@ vim.pack.add({
     src = "https://github.com/stevearc/aerial.nvim",
     version = vim.version.range("^3.1"),
   },
-})
+}, { load = true })
 
 require("aerial").setup({
 on_attach = function(bufnr)

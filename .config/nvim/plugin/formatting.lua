@@ -2,7 +2,7 @@ vim.pack.add({
   { src = "https://github.com/stevearc/conform.nvim", version = vim.version.range("^9.0") },
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/zapling/mason-conform.nvim", version = "main" },
-})
+}, { load = true })
 
 local conform = require("conform")
 
