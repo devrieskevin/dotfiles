@@ -4,8 +4,5 @@ vim.pack.add({
 }, { load = true })
 
 require("lualine").setup({
-  options = {
-    theme = "catppuccin",
-  },
   extensions = { "aerial", "avante", "quickfix" },
 })
