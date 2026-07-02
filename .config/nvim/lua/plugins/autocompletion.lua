@@ -47,6 +47,7 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
+          { name = "copilot" },
         }, {
           { name = "buffer" },
         }),
@@ -76,6 +77,7 @@ return {
             cmp.mapping.complete({
               config = {
                 sources = cmp.config.sources({
+                  { name = "copilot" },
                   { name = "cmp_ai" },
                 }),
               },
