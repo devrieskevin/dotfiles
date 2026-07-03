@@ -33,6 +33,16 @@
       "src": "https://github.com/stevearc/conform.nvim",
       "version": "9.0.0 - 10.0.0"
     },
+    "copilot-cmp": {
+      "rev": "15fc12af3d0109fa76b60b5cffa1373697e261d1",
+      "src": "https://github.com/zbirenbaum/copilot-cmp",
+      "version": "'master'"
+    },
+    "copilot.lua": {
+      "rev": "760912b5992e1d6437378a9c7f2b0cb950966cf5",
+      "src": "https://github.com/zbirenbaum/copilot.lua",
+      "version": "'master'"
+    },
     "gitsigns.nvim": {
       "rev": "7010000889bfb6c26065e0b0f7f1e6aa9163edd9",
       "src": "https://github.com/lewis6991/gitsigns.nvim",
