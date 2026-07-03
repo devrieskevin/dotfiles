@@ -1,0 +1,135 @@
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == "nvim-treesitter" and kind == "update" then
+      if not ev.data.active then
+        vim.cmd.packadd("nvim-treesitter")
+      end
+      vim.cmd("TSUpdate")
+    end
+  end,
+})
+
+vim.pack.add({
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects", version = "main" },
+})
+
+-- Setup nvim-treesitter
+
+local languages = {
+  "c",
+  "lua",
+  "vim",
+  "vimdoc",
+  "query",
+  "elixir",
+  "heex",
+  "javascript",
+  "typescript",
+  "html",
+  "python",
+  "twig",
+  "php",
+  "sql",
+  "rust",
+  "css",
+  "scss",
+  "yaml",
+  "wgsl",
+}
+
+require("nvim-treesitter").install(languages)
+
+local filetypes = vim
+  .iter(require("nvim-treesitter").get_installed("parsers"))
+  :map(function(language)
+    return vim.treesitter.language.get_filetypes(language)
+  end)
+  :flatten()
+  :unique()
+  :totable()
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = filetypes,
+  callback = function()
+    vim.treesitter.start()
+
+    vim.wo.foldmethod = "expr"
+    vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
+})
+
+-- Setup nvim-treesitter-textobjects
+
+-- Disable entire built-in ftplugin mappings to avoid conflicts.
+-- See https://github.com/neovim/neovim/tree/master/runtime/ftplugin for built-in ftplugins.
+vim.g.no_plugin_maps = true
+
+require("nvim-treesitter-textobjects").setup({
+  select = {
+    lookahead = true,
+    selection_modes = {
+      ["@parameter.outer"] = "v",
+      ["@function.outer"] = "V",
+      ["@class.outer"] = "<c-v>",
+    },
+    include_surrounding_whitespace = true,
+  },
+  move = {
+    set_jumps = true,
+  },
+})
+
+-- Select keymaps
+vim.keymap.set({ "x", "o" }, "af", function()
+  require("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects")
+end)
+vim.keymap.set({ "x", "o" }, "if", function()
+  require("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects")
+end)
+vim.keymap.set({ "x", "o" }, "ac", function()
+  require("nvim-treesitter-textobjects.select").select_textobject("@class.outer", "textobjects")
+end)
+vim.keymap.set({ "x", "o" }, "ic", function()
+  require("nvim-treesitter-textobjects.select").select_textobject("@class.inner", "textobjects")
+end)
+
+-- Swap keymaps
+vim.keymap.set("n", "<leader>s", function()
+  require("nvim-treesitter-textobjects.swap").swap_next("@parameter.inner")
+end)
+vim.keymap.set("n", "<leader>S", function()
+  require("nvim-treesitter-textobjects.swap").swap_previous("@parameter.inner")
+end)
+
+-- Move keymaps
+vim.keymap.set({ "n", "x", "o" }, "]m", function()
+  require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects")
+end)
+vim.keymap.set({ "n", "x", "o" }, "]s", function()
+  require("nvim-treesitter-textobjects.move").goto_next_start("@scope", "locals")
+end)
+vim.keymap.set({ "n", "x", "o" }, "]z", function()
+  require("nvim-treesitter-textobjects.move").goto_next_start("@fold", "folds")
+end)
+
+vim.keymap.set({ "n", "x", "o" }, "]M", function()
+  require("nvim-treesitter-textobjects.move").goto_next_end("@function.outer", "textobjects")
+end)
+
+vim.keymap.set({ "n", "x", "o" }, "[m", function()
+  require("nvim-treesitter-textobjects.move").goto_previous_start("@function.outer", "textobjects")
+end)
+vim.keymap.set({ "n", "x", "o" }, "[s", function()
+  require("nvim-treesitter-textobjects.move").goto_previous_start("@scope", "locals")
+end)
+vim.keymap.set({ "n", "x", "o" }, "[z", function()
+  require("nvim-treesitter-textobjects.move").goto_previous_start("@fold", "folds")
+end)
+
+vim.keymap.set({ "n", "x", "o" }, "[M", function()
+  require("nvim-treesitter-textobjects.move").goto_previous_end("@function.outer", "textobjects")
+end)
