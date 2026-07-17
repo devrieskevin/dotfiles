@@ -3,7 +3,7 @@ vim.pack.add({
   "https://github.com/nvim-tree/nvim-web-devicons",
   {
     src = "https://github.com/stevearc/aerial.nvim",
-    version = vim.version.range("^3.1"),
+    version = vim.version.range("^4.0"),
   },
 }, { load = true })
 

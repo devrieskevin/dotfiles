@@ -1,6 +1,6 @@
 vim.pack.add({
   { src = "https://github.com/nvim-lua/plenary.nvim" },
-  { src = "https://github.com/nvim-telescope/telescope.nvim", version = vim.version.range("^0.1") },
+  { src = "https://github.com/nvim-telescope/telescope.nvim", version = vim.version.range("^0.2") },
   { src = "https://github.com/nvim-telescope/telescope-file-browser.nvim", version = "master" },
   { src = "https://github.com/nvim-telescope/telescope-ui-select.nvim", version = "master" },
 }, { load = true })

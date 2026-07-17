@@ -10,9 +10,9 @@
       "src": "https://github.com/L3MON4D3/LuaSnip"
     },
     "aerial.nvim": {
-      "rev": "645d108a5242ec7b378cbe643eb6d04d4223f034",
+      "rev": "ac583c330f95bc9731c7cdf71123c0f76d1b0385",
       "src": "https://github.com/stevearc/aerial.nvim",
-      "version": "3.1.0 - 4.0.0"
+      "version": "4.0.0 - 5.0.0"
     },
     "catppuccin": {
       "rev": "605b4603797de970e9f3a4238c199c850da03186",
@@ -44,9 +44,9 @@
       "version": "'master'"
     },
     "gitsigns.nvim": {
-      "rev": "7010000889bfb6c26065e0b0f7f1e6aa9163edd9",
+      "rev": "a462f416e2ce4744531c6256252dee99a7d34a83",
       "src": "https://github.com/lewis6991/gitsigns.nvim",
-      "version": "1.0.0 - 2.0.0"
+      "version": "2.1.0 - 3.0.0"
     },
     "harpoon": {
       "rev": "87b1a3506211538f460786c23f98ec63ad9af4e5",
@@ -174,9 +174,9 @@
       "version": "'master'"
     },
     "telescope.nvim": {
-      "rev": "84b9ba066d1860f7a586ce9cd732fd6c4f77d1d9",
+      "rev": "5255aa27c422de944791318024167ad5d40aad20",
       "src": "https://github.com/nvim-telescope/telescope.nvim",
-      "version": "0.1.0 - 0.2.0"
+      "version": "0.2.0 - 0.3.0"
     },
     "vim-flog": {
       "rev": "e7a0e9f6f26d154b1e550de94414ea71e354c563",
