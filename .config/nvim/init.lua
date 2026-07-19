@@ -1,6 +1,7 @@
 require("config.options")
 
-require("autocmds.lsp")
+require("user_commands.lsp")
+require("user_commands.pack")
 
 -- Enable builtin plugins
 vim.cmd("packadd nvim.difftool")
