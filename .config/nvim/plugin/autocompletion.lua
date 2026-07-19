@@ -11,8 +11,7 @@ cmp_ai:setup({
   max_lines = 100,
   provider = "Ollama",
   provider_options = {
-    model = "granite-code:3b",
-    -- Uncomment prompt and suffix for `<fim_*>` based templates
+    model = "qwen2.5-coder:14b-base-q6_K",
     prompt = function(lines_before, lines_after)
       return lines_before
     end,
