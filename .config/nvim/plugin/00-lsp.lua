@@ -36,7 +36,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
     "pyright",
-    "phpantom",
+    "phpantom_lsp",
     "ts_ls",
     "twiggy_language_server",
     "docker_compose_language_service",
