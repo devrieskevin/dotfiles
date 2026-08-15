@@ -14,6 +14,7 @@ lint.linters_by_ft = {
   javascriptreact = { "eslint_d" },
   typescript = { "eslint_d" },
   typescriptreact = { "eslint_d" },
+  ["yaml.ansible"] = { "ansible_lint" },
 }
 
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

@@ -1,4 +1,5 @@
 vim.pack.add({
+  { src = "https://codeberg.org/mfussenegger/nvim-ansible.git", version = "main" },
   { src = "https://github.com/mason-org/mason.nvim", version = vim.version.range("^2.0") },
   { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
   { src = "https://github.com/neovim/nvim-lspconfig", version = vim.version.range("^2.0") },
@@ -45,6 +46,7 @@ require("mason-lspconfig").setup({
     "wgsl_analyzer",
     "html",
     "bashls",
+    "ansiblels",
   },
 })
 
