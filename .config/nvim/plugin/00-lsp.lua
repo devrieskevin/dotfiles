@@ -61,14 +61,6 @@ vim.lsp.config("pyright", {
   end,
 })
 
-vim.lsp.config("phpactor", {
-  capabilities = lsp_capabilities,
-  init_options = {
-    ["language_server_worse_reflection.inlay_hints.enable"] = true,
-    ["language_server_worse_reflection.inlay_hints.types"] = true,
-  },
-})
-
 vim.lsp.config("wgsl_analyzer", {
   filetypes = { "wgsl", "wesl" },
   capabilities = lsp_capabilities,
