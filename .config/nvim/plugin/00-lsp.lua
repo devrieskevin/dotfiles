@@ -36,7 +36,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
     "pyright",
-    "phpactor",
+    "phpantom_lsp",
     "ts_ls",
     "twiggy_language_server",
     "docker_compose_language_service",
@@ -59,14 +59,6 @@ vim.lsp.config("pyright", {
   before_init = function(_, config)
     config.settings.python.pythonPath = get_python_path(config.root_dir, path)
   end,
-})
-
-vim.lsp.config("phpactor", {
-  capabilities = lsp_capabilities,
-  init_options = {
-    ["language_server_worse_reflection.inlay_hints.enable"] = true,
-    ["language_server_worse_reflection.inlay_hints.types"] = true,
-  },
 })
 
 vim.lsp.config("wgsl_analyzer", {
