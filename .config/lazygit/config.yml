@@ -1,13 +1,12 @@
 gui:
-  authorColors:
-    'Kevin de Vries': '#ffa500'
   theme:
     optionsTextColor:
       - white
-  branchColorPatterns:
-    '^feature/': '#00ff00'
-    '^hotfix/': '#ff0000'
-
+    authorColors:
+      'Kevin de Vries': '#ffa500'
+    branchColorPatterns:
+      '^feature/': '#00ff00'
+      '^hotfix/': '#ff0000'
 git:
   merging:
     args: '--no-ff'
