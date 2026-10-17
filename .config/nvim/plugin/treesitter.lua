@@ -37,6 +37,7 @@ local languages = {
   "scss",
   "yaml",
   "wgsl",
+  "java",
 }
 
 require("nvim-treesitter").install(languages)
