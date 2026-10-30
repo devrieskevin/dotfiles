@@ -10,6 +10,7 @@ lint.linters_by_ft = {
   lua = { "luacheck" },
   python = { "ruff" },
   php = { "phpstan" },
+  java = { "checkstyle" },
   javascript = { "eslint_d" },
   javascriptreact = { "eslint_d" },
   typescript = { "eslint_d" },
@@ -36,5 +37,7 @@ require("mason-nvim-lint").setup({
     "ruff",
     "phpstan",
     "eslint_d",
+    "ansible-lint",
+    "checkstyle",
   },
 })
