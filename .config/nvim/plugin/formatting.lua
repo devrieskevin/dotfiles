@@ -23,6 +23,7 @@ conform.setup({
     javascriptreact = { "prettier" },
     typescript = { "prettier" },
     typescriptreact = { "prettier" },
+    java = { "google-java-format" },
     ["*"] = { "trim_whitespace" },
   },
 })
