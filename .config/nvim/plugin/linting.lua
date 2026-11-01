@@ -1,7 +1,7 @@
 vim.pack.add({
   { src = "https://github.com/mfussenegger/nvim-lint", version = "master" },
   { src = "https://github.com/mason-org/mason.nvim" },
-  { src = "https://github.com/rshkarin/mason-nvim-lint", version = vim.version.range("^0.1") },
+  { src = "https://github.com/rshkarin/mason-nvim-lint", version = "main" },
 }, { load = true })
 
 local lint = require("lint")
@@ -15,6 +15,7 @@ lint.linters_by_ft = {
   javascriptreact = { "eslint_d" },
   typescript = { "eslint_d" },
   typescriptreact = { "eslint_d" },
+  c = { "clang-tidy" },
   ["yaml.ansible"] = { "ansible_lint" },
 }
 
@@ -39,5 +40,6 @@ require("mason-nvim-lint").setup({
     "eslint_d",
     "ansible-lint",
     "checkstyle",
+    "clang-tidy",
   },
 })

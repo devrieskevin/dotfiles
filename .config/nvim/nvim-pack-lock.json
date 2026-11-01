@@ -89,9 +89,9 @@
       "version": "2.4.0 - 3.0.0"
     },
     "mason-nvim-lint": {
-      "rev": "b579a00ee39dcd590b1023028dc8fb3d203a67b0",
+      "rev": "db7d43835e3bf99b70ab1bf232e5b8e500999558",
       "src": "https://github.com/rshkarin/mason-nvim-lint",
-      "version": "0.1.0 - 0.2.0"
+      "version": "'main'"
     },
     "mason.nvim": {
       "rev": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",
