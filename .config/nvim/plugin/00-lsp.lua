@@ -48,6 +48,7 @@ require("mason-lspconfig").setup({
     "bashls",
     "ansiblels",
     "jdtls",
+    "clangd",
   },
 })
 

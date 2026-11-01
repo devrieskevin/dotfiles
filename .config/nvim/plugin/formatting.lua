@@ -24,6 +24,7 @@ conform.setup({
     typescript = { "prettier" },
     typescriptreact = { "prettier" },
     java = { "google-java-format" },
+    c = { "clang-format" },
     ["*"] = { "trim_whitespace" },
   },
 })
