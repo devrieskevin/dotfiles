@@ -15,7 +15,6 @@ lint.linters_by_ft = {
   javascriptreact = { "eslint_d" },
   typescript = { "eslint_d" },
   typescriptreact = { "eslint_d" },
-  c = { "clang-tidy" },
   ["yaml.ansible"] = { "ansible_lint" },
 }
 
@@ -40,6 +39,5 @@ require("mason-nvim-lint").setup({
     "eslint_d",
     "ansible-lint",
     "checkstyle",
-    "clang-tidy",
   },
 })
