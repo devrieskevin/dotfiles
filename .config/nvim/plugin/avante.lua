@@ -35,7 +35,7 @@ require("avante").setup({
   provider = "ollama",
   providers = {
     ollama = {
-      model = "qwq:32b",
+      model = "gemma4:12b",
       is_env_set = require("avante.providers.ollama").check_endpoint_alive,
     },
   },

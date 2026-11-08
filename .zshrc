@@ -56,5 +56,9 @@ if command -v docker &>/dev/null; then
     eval "$(docker completion zsh)"
 fi
 
+if command -v brew &>/dev/null; then
+    export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+fi
+
 export LANG="en_US.UTF-8"
 
