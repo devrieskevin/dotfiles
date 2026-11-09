@@ -40,3 +40,5 @@ require("avante").setup({
     },
   },
 })
+
+vim.keymap.set("n", "<leader>ap", "<Cmd>AvanteSwitchProvider<CR>", { desc = "Avante: Switch Provider" })
