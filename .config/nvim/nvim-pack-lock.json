@@ -25,7 +25,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "cmp-ai": {
-      "rev": "996c76519fa92abab8071e3a732f4c07265eb554",
+      "rev": "2ca1411c11b27457af952e69534d10ae35d438ad",
       "src": "https://github.com/tzachar/cmp-ai",
       "version": "'main'"
     },
@@ -44,7 +44,7 @@
       "version": "'master'"
     },
     "copilot.lua": {
-      "rev": "3547efbff9adeecbd9d431c0a2a8707b7f6a4131",
+      "rev": "ba6c1c7e7b2b6b0a93838097bd09c7c83afa30d3",
       "src": "https://github.com/zbirenbaum/copilot.lua",
       "version": "'master'"
     },
@@ -73,7 +73,7 @@
       "version": "1.9.0 - 2.0.0"
     },
     "lazygit.nvim": {
-      "rev": "9ffc6103926718f7070fb4017694543cd7dc9718",
+      "rev": "8557434b285217fd0e284da252638567cebb3240",
       "src": "https://github.com/kdheepak/lazygit.nvim",
       "version": "'main'"
     },
@@ -148,12 +148,12 @@
       "version": "'master'"
     },
     "nvim-lint": {
-      "rev": "52107ce2076a27a285af781248e2c59bad817cd0",
+      "rev": "6bf29b9dbdad60b38b489b23309c22ba6d4c915a",
       "src": "https://github.com/mfussenegger/nvim-lint",
       "version": "'master'"
     },
     "nvim-lspconfig": {
-      "rev": "4d363f93c3581b9212a24f7a830d7590b3f050af",
+      "rev": "4648fd8ba5c678d7e2db75ae44ffac269bb589d8",
       "src": "https://github.com/neovim/nvim-lspconfig",
       "version": "2.0.0 - 3.0.0"
     },
@@ -162,7 +162,7 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
-      "rev": "04f17886f75416dfdc25374c950a52c63f0e98fe",
+      "rev": "37e52c733ada9d8d544d53a763140ef1ba404353",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -180,7 +180,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "8801162e041e34c64d0d1397cd1f353a14b01950",
+      "rev": "a67f826164c38c836fc6060f32b275c4c43317a7",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "rustaceanvim": {
@@ -218,7 +218,7 @@
       "version": "'master'"
     },
     "vim-tmux-navigator": {
-      "rev": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432",
+      "rev": "fb217852efb294a50a10507fc8d53709696b6e23",
       "src": "https://github.com/christoomey/vim-tmux-navigator",
       "version": "'master'"
     }
