@@ -60,5 +60,9 @@ if command -v brew &>/dev/null; then
     export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 fi
 
+if command -v nvim &>/dev/null; then
+    export EDITOR="nvim"
+fi
+
 export LANG="en_US.UTF-8"
 
